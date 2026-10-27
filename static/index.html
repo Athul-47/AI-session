@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quote of the Day</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>Quote of the day</h1>
+
+    <blockquote id="quote" aria-live="polite">
+      Press the sun to get a quote.
+    </blockquote>
+
+    <button id="new-quote" type="button">
+      <span class="sun" aria-hidden="true"></span>
+      <span class="label">New quote</span>
+    </button>
+
+    <p id="error" role="alert" hidden>
+      Could not reach the server. Make sure app.py is running, then try again.
+    </p>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
