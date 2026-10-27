@@ -1,4 +1,5 @@
 const quoteEl = document.getElementById("quote");
+const authorEl = document.getElementById("author");
 const button = document.getElementById("new-quote");
 const errorEl = document.getElementById("error");
 
@@ -12,9 +13,13 @@ async function loadQuote() {
     const data = await response.json();
 
     quoteEl.textContent = data.quote;
+    authorEl.textContent = data.author ? `— ${data.author}` : "";
+
     quoteEl.classList.remove("fade");
+    authorEl.classList.remove("fade");
     void quoteEl.offsetWidth; // restart the animation
     quoteEl.classList.add("fade");
+    authorEl.classList.add("fade");
   } catch (err) {
     errorEl.hidden = false;
   } finally {
